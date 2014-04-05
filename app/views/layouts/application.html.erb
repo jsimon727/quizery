@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quizery</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <ul class="nav">
+    <% if session[:user_id].nil? %>
+    <li class="login">Log In</li>
+    <% end %>
+    <li class="logout"><%= link_to("Log Out", "/logout", method: "delete") unless session[:user_id].nil? %></li>
+  <ul>
+
+<%= yield %>
+
+</body>
+</html>

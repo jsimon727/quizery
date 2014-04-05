@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  correct: false
+  letter: MyString
+  name: MyString
+  question_id: 
+  user_id: 
+
+two:
+  correct: false
+  letter: MyString
+  name: MyString
+  question_id: 
+  user_id: 

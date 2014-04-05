@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  category: MyString
+  time_limit: 1
+  start_time: 2014-04-03 13:23:04
+  point_value: 1
+
+two:
+  name: MyString
+  category: MyString
+  time_limit: 1
+  start_time: 2014-04-03 13:23:04
+  point_value: 1

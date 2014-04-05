@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  query: MyString
+  number: 1
+  quiz_id: 
+  time_limit: 1
+
+two:
+  query: MyString
+  number: 1
+  quiz_id: 
+  time_limit: 1
