@@ -1,11 +1,11 @@
 require 'spec_helper'
 Capybara.javascript_driver = :webkit
 
-describe "a student can join Quizery" do
+describe "a student can join Quizery", :js => true do
   let(:student){ FactoryGirl.create(:user, type: "Student") }
   let(:student1){ FactoryGirl.create(:user) }
 
-  it "creates a new student" do
+  it "creates a new student", :driver => :webkit do
     visit '/'
     click_button "Join Quizery"
 

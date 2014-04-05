@@ -3,7 +3,9 @@ class UsersController < ApplicationController
   before_action :authenticate, :authorize, only: [:edit, :update, :show]
   
   def index
-    @user = User.find(session[:user_id])
+    if current_user
+      @user = User.find(@user)
+    end
   end
 
   def new

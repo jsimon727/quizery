@@ -12,11 +12,13 @@
   <% end %>
 </div>
 
-<%= link_to("Teacher Dashboard", user_path(session[:user_id])) %>
+<% if current_user %>
+    <%= link_to("My Dashboard", user_path(@user)) %>   
+<% end %>
 
 
 <script>
   $('.login').click(function(){
-    $('.loginForm').toggle("slow")
+    $('.loginForm').toggle(300)
   })
 </script>

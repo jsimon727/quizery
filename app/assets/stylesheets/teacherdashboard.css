@@ -7,7 +7,7 @@ TEACHER DASHBOARD
   border: 1px solid black;
   border-radius: 5px;
   padding: 10px;
-  width: 30%;
+  width: 80%;
   display: none;
 }
 
@@ -63,3 +63,6 @@ TEACHER DASHBOARD
   position:relative;
   top:1px;
 }
+
+
+

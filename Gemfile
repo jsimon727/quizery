@@ -27,6 +27,8 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'jquery-timepicker-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -45,7 +47,7 @@ group :development, :test do
   # acceptance testing
   gem 'capybara'
   gem 'launchy'
-  # gem "capybara-webkit'
+  gem 'capybara-webkit'
 
   # test helper libraries
   gem 'shoulda-matchers'
