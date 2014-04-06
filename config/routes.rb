@@ -1,5 +1,5 @@
 Quizery::Application.routes.draw do
-  root "users#index"
+  root "quizzes#index"
 
   resources :users
   resources :quizzes do

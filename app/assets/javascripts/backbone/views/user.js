@@ -13,8 +13,7 @@ Quizery.Views.UserForm = Backbone.View.extend({
     var last_name = this.el.elements["last_name"].value;
     var password = this.el.elements["password"].value;
     var password_confirmation = this.el.elements["password_confirmation"].value;
-    console.log(type)
-    console.log(email)
+ 
     this.collection.create({
       type: type,
       email: email, 

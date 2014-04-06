@@ -1,4 +1,33 @@
+<button class="joinbutton">Join Quizery</button>
+<form class="joinForm">
+</form>
+<div class="loginForm">
+  <%= form_tag "/login" do %>
+    <%= label_tag :email %>:
+    <%= email_field_tag :email %></br>
+    <%= label_tag :password %>:
+    <%= password_field_tag :password %></br>
+    
+    <%= submit_tag "Log in!" %>
+  <% end %>
+</div>
 
+<% if current_user %>
+    <%= link_to("My Dashboard", user_path(@user)) %>   
+<% end %>
+
+<div class="allQuizzes">
+  <% @quizzes.each do |quiz| %>
+    <a href='/quizzes/<%= quiz.id %>'><%= quiz.name %></a>
+  <% end %>
+</div>
+
+
+<script>
+  $('.login').click(function(){
+    $('.loginForm').toggle(300)
+  })
+</script>
 
 
   

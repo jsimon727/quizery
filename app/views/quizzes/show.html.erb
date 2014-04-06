@@ -1,0 +1,6 @@
+<%= @quiz.name %>
+
+<% for question in @quiz.questions %>
+  <li><%= question.query %></li>
+  <li><%= question.answers.name %></li>
+<% end %>

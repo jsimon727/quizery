@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140403174827) do
+ActiveRecord::Schema.define(version: 20140405220211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,10 +39,10 @@ ActiveRecord::Schema.define(version: 20140403174827) do
     t.string   "name"
     t.string   "category"
     t.integer  "time_limit"
-    t.datetime "start_time"
     t.integer  "point_value"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "start_date"
   end
 
   create_table "scores", force: true do |t|

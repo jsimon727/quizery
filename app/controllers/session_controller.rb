@@ -8,7 +8,7 @@ class SessionController < ApplicationController
 
     if user && ( user.authenticate(params[:password]) ) && user.type == "Student"
       session[:user_id] = user.id
-      redirect_to users_path
+      redirect_to ('/')
 
     elsif user && ( user.authenticate(params[:password]) ) && user.type == "Teacher" 
       session[:user_id] = user.id

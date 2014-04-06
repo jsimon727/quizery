@@ -3,12 +3,12 @@ class UsersController < ApplicationController
   before_action :authenticate, :authorize, only: [:edit, :update, :show]
   
   def index
-    if current_user
-      @user = User.find(@user)
-    end
   end
 
   def new
+  end
+
+  def show
   end
 
   def create

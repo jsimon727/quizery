@@ -27,7 +27,6 @@
 
 window.Quizery = {
   Models: {},
-  RelationalModel: {},
   Collections: {},
   Routers: {},
   Views: {}

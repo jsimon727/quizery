@@ -1,0 +1,33 @@
+<div class="newQuiz">
+  <%= form_for @quiz, :html => {:id => 'newQuizForm' } do |f| %>
+    <p>
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </p>
+    <p><%= select_tag(:category, options_for_select([['Math', 'Math'], ['History', 'History'], ['English', 'English'], ['Science', 'Science']])) %>
+    </p>
+    <p>
+      <%= f.label :start_date %><br />
+      <%= f.text_field :start_date %>
+    </p>
+
+    <%= f.fields_for :questions do |builder| %>
+      <%= render 'question_fields', :f => builder %>
+    <% end %>
+    <p><%= link_to_add_fields "Add Question", f, :questions %></p>
+    <p><%= f.submit "Save" %></p>
+  <% end %>
+</div>
+
+<script>
+  function remove_fields(link) {
+    $(link).prev("input[type=hidden]").val("1");
+    $(link).closest(".fields").hide();
+  }
+
+  function add_fields(link, association, content) {
+    var new_id = new Date().getTime();
+    var regexp = new RegExp("new_" + association, "g")
+    $(link).parent().before(content.replace(regexp, new_id));
+  }
+</script>

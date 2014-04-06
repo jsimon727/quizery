@@ -64,5 +64,16 @@ TEACHER DASHBOARD
   top:1px;
 }
 
+.loginForm{
+  display: none;
+}
+
+.quizForm, .newQuizForm{
+  display: none;
+  border: 1px solid black;
+  padding: 10px;
+  width: 50%;
+}
+
 
 
