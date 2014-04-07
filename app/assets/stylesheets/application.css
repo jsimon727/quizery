@@ -12,3 +12,12 @@
  *= require_tree .
  */
 
+.quiz{
+  display: none;
+}
+
+#timerClock{
+  width: 20%;
+  float: right;
+  margin-right: 40%;
+}

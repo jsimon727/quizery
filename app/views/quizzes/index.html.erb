@@ -12,13 +12,16 @@
   <% end %>
 </div>
 
-<% if current_user %>
-    <%= link_to("My Dashboard", user_path(@user)) %>   
+
+<% if current_user && @user.type == "Teacher" %>
+  <%= link_to("Create A New Quiz", new_quiz_path) %>
+<% elsif current_user && current_user.type == "Student" %>
+  <%= link_to("My Dashboard", user_path(@user)) %> 
 <% end %>
 
 <div class="allQuizzes">
   <% @quizzes.each do |quiz| %>
-    <a href='/quizzes/<%= quiz.id %>'><%= quiz.name %></a>
+    <li><a href='/quizzes/<%= quiz.id %>'><button><%= quiz.name %></button></a></li>
   <% end %>
 </div>
 

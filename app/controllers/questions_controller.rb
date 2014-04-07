@@ -6,7 +6,6 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    binding.pry
     @quiz = Quiz.find(params[:quiz_id])
 
     @question = @quiz.questions.new(question_params)

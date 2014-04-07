@@ -7,6 +7,11 @@
     <p><%= select_tag(:category, options_for_select([['Math', 'Math'], ['History', 'History'], ['English', 'English'], ['Science', 'Science']])) %>
     </p>
     <p>
+      <%= f.label :time_limit %><br />
+      <%= f.text_field :time_limit %> Minutes
+    </p>
+
+    <p>
       <%= f.label :start_date %><br />
       <%= f.text_field :start_date %>
     </p>
@@ -20,6 +25,11 @@
 </div>
 
 <script>
+  $("#quiz_start_date").datepicker({
+    minDate: 0,
+    dateFormat: "yy-mm-dd"
+  });
+
   function remove_fields(link) {
     $(link).prev("input[type=hidden]").val("1");
     $(link).closest(".fields").hide();

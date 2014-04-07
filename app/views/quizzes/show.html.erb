@@ -1,6 +1,64 @@
-<%= @quiz.name %>
+<% if @quiz.start_date >= DateTime.now.to_date %>
+<h1><%= @quiz.name %></h1>
 
-<% for question in @quiz.questions %>
-  <li><%= question.query %></li>
-  <li><%= question.answers.name %></li>
+<button class="start_quiz">Start Quiz</button>
+
+<div id="timerClock">
+  <div id="DateCountdown" data-timer="<%= @quiz.time_limit * 60 %>" style="width: 100%;">
+  </div>
+</div>
+
+<div class ="quiz">
+
+  <%= @quiz.name %>
+
+
+
+<ol class="questions">
+    <% @quiz.questions.each do |question| %>
+    <li>
+      <%= question.query %>
+      <ol class="answers">
+        <% question.answers.each do |answer| %>
+        <li>
+          <%= radio_button_tag("answer[#{question.id}]", answer.id) %>
+          <%= label("answer_".concat(answer.id.to_s).to_sym, answer.name) %>
+        </li>
+        <% end %>
+      </ol>
+    </li>
+    <% end %>
+</ol>
+
+  <div><%= submit_tag("Submit", :class => "submit") %></div>
+
+</div>
+
+<%= @score %>
+
+<% else %>
+  <h4>Sorry this quiz is not available yet. It will be available on <%= @quiz.start_date %></h4>
 <% end %>
+
+<script>
+$(".submit").on("click", function(){
+
+   $.ajax({
+      url: "/scores",
+      type: "POST",
+      data: {quiz_id: <%= @quiz.id %>, answer: _.map($("input:checked"), function(choice){return choice.getAttribute("value")}) },
+      
+      success: function(response) {
+          $("body").append($("<div class ='quiz_score'>QUIZ SCORE:" + response.value + "% </div>"))
+          $(".quiz").remove(); 
+          $(".submit").remove();
+          $(".start_quiz").remove();
+      }
+    });
+})
+
+</script>
+
+
+
+

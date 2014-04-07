@@ -16,30 +16,39 @@ class QuizzesController < ApplicationController
 
   def show
     @quiz = Quiz.find(params[:id])
-    @questions = @quiz.questions.all 
+    @questions = @quiz.questions
   end
 
   def create
-    binding.pry
     @quiz = Quiz.new(quiz_params)
     if @quiz.save
      redirect_to @quiz, notice: "Successfully created survey."
     else
       render :new
     end
-
-    # if @quiz.save
-    #   render json: @quiz
-    # else
-    #   render status: 400, nothing: true
-    # end
   end
+
+
+  #  score = 0
+  #   if answer.correct == true
+  #     score + 1
+  #   else
+  #     score
+  #   end
+  # end
+
+
+  
+    # @question = Question.find(@answer.question_id)
+    # @correct_answer = @question.answers.where(correct: 'true')
+    # @correct_answer[0].id = @answer.id ? (@score + 1) : @score
+
 
 
   private
 
   def quiz_params
-    params.require(:quiz).permit(:category, :name, :time_limit, :start_date, questions_attributes: [:query, :number, :time_limit], answers_attributes: [:name, :number, :correct])
+    params.require(:quiz).permit(:category, :name, :time_limit, :start_date, questions_attributes: [:query, :number, :time_limit, answers_attributes: [:name, :number, :correct]])
   end
 
 end

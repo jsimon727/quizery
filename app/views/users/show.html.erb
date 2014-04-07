@@ -1,5 +1,10 @@
-<% if @user.type == "Student" %>
-  <%= render 'studentshow' %>
-<% elsif @user.type == "Teacher" %>
-  <%= render 'teachershow' %>
-<% end %>
+STUDENT DASHBOARD
+
+
+<br>
+<h1>MY RESULTS</h1>
+
+<% @user.scores.each do |score| %>
+  <li>Quiz Name: <%= score.quiz_name %></li>
+  <li>Quiz Score: <%= score.value %>%</li>
+<% end %> 
