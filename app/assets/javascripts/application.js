@@ -12,7 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.ui.datepicker
+//= require jquery.ui.all
+//= require d3
 //= require jquery.timepicker.js
 //= require TimeCircles.js
 //= require turbolinks

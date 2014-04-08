@@ -1,6 +1,7 @@
 class QuizzesController < ApplicationController
   def index
     @quizzes = Quiz.all
+    @quizzes.group_by(&:category)
     if current_user
       @user = User.find(current_user.id)
     end
@@ -21,29 +22,13 @@ class QuizzesController < ApplicationController
 
   def create
     @quiz = Quiz.new(quiz_params)
+    @quiz.category = params["category"]
     if @quiz.save
      redirect_to @quiz, notice: "Successfully created survey."
     else
       render :new
     end
   end
-
-
-  #  score = 0
-  #   if answer.correct == true
-  #     score + 1
-  #   else
-  #     score
-  #   end
-  # end
-
-
-  
-    # @question = Question.find(@answer.question_id)
-    # @correct_answer = @question.answers.where(correct: 'true')
-    # @correct_answer[0].id = @answer.id ? (@score + 1) : @score
-
-
 
   private
 

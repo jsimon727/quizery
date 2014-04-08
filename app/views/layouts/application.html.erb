@@ -9,11 +9,12 @@
 <body>
 
   <ul class="nav">
-    <% if session[:user_id].nil? %>
-    <li class="login">Log In</li>
-    <% end %>
+    <li><%= link_to("Home", quizzes_path) %></li>
     <li class="logout"><%= link_to("Log Out", "/logout", method: "delete") unless session[:user_id].nil? %></li>
-  <ul>
+    <% if current_user && current_user.type == 'Student' %>
+      <li><%= link_to("My Dashboard", user_path(current_user.id)) %></li>
+    <% end %>
+  </ul>
 
   <% unless @user.nil? %>
     <script>

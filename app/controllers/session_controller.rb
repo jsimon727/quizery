@@ -17,7 +17,11 @@ class SessionController < ApplicationController
     elsif user && ( user.authenticate(params[:password]) ) 
       session[:user_id] = user.id
       redirect_to ( '/' )
-    end
+
+    else
+      redirect_to ('/')
+      flash[:message] = 'Invalid email/password combination'
+    end    
   end
 
   def destroy

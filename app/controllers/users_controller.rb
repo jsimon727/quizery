@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @dataset = []
   end
 
   def create
@@ -19,7 +20,7 @@ class UsersController < ApplicationController
   
     if @user.save
       session[:user_id] = @user.id
-      render json: @user
+      redirect_to ('/')
     else
       render status: 400, nothing:true
     end

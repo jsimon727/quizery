@@ -1,7 +1,13 @@
-<h1>The Quizery Creation Zone</h1>
+<div class="createQuiz">
+  <h1>The Quizery Creation Zone</h1> 
 
-<h2>How To Use</h2>
+  <%= link_to("All Quizzes", quizzes_path) %>
+  <h2>How To Use</h2>
+   <%= image_tag('quizcreation.png')%>
+   <%= image_tag('quizcheck.png')%>
 
-<h2 class ="createNewQuiz">Create a New Quiz</h2>
+
+  <h2 class ="createNewQuiz">Create a New Quiz</h2>
+</div>
 
 <%= render 'form' %>

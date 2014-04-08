@@ -1,63 +1,74 @@
-<% if @quiz.start_date >= DateTime.now.to_date %>
-<h1><%= @quiz.name %></h1>
+<body class="startquiz">
+  <% if @quiz.start_date <= DateTime.now.to_date %>
+    <h1><%= @quiz.name %></h1>
 
-<button class="start_quiz">Start Quiz</button>
+  <% if current_user && current_user.type == "Teacher" %>
+    <%= form_tag quiz_path(@quiz), method: "delete" do %>
+      <%= submit_tag("Delete Quiz") %>
+    <% end %>
+    <%= link_to("Create New Quiz", new_quiz_path) %>
+  <% end %>
 
-<div id="timerClock">
-  <div id="DateCountdown" data-timer="<%= @quiz.time_limit * 60 %>" style="width: 100%;">
+  <button class="start_quiz">Start Quiz</button>
+
+  <div class="blue">
   </div>
-</div>
 
-<div class ="quiz">
+  <div id="timerClock">
+    <div id="DateCountdown" data-timer="<%= @quiz.time_limit * 60 %>" class="ui-widget-content" style="width: 100%;">
+    </div>
+  </div>
 
-  <%= @quiz.name %>
-
-
-
-<ol class="questions">
-    <% @quiz.questions.each do |question| %>
-    <li>
-      <%= question.query %>
-      <ol class="answers">
-        <% question.answers.each do |answer| %>
+  <div class ="quiz">
+    <ol class="questions">
+        <% @quiz.questions.each do |question| %>
         <li>
-          <%= radio_button_tag("answer[#{question.id}]", answer.id) %>
-          <%= label("answer_".concat(answer.id.to_s).to_sym, answer.name) %>
+          <%= question.query %>
+          <ol class="answers">
+            <% question.answers.each do |answer| %>
+            <li>
+              <%= radio_button_tag("answer[#{question.id}]", answer.id) %>
+              <%= label("answer_".concat(answer.id.to_s).to_sym, answer.name) %>
+            </li>
+            <% end %>
+          </ol>
         </li>
         <% end %>
-      </ol>
-    </li>
-    <% end %>
-</ol>
+    </ol>
 
-  <div><%= submit_tag("Submit", :class => "submit") %></div>
+    <div><%= submit_tag("Submit", :class => "submit") %></div>
 
-</div>
+  </div>
 
-<%= @score %>
+  <%= @score %>
 
-<% else %>
-  <h4>Sorry this quiz is not available yet. It will be available on <%= @quiz.start_date %></h4>
-<% end %>
+  <% else %>
+    <h4>Sorry this quiz is not available yet. It will be available on <%= @quiz.start_date %></h4>
+  <% end %>
 
-<script>
-$(".submit").on("click", function(){
+</body>
+  <script>
 
-   $.ajax({
-      url: "/scores",
-      type: "POST",
-      data: {quiz_id: <%= @quiz.id %>, answer: _.map($("input:checked"), function(choice){return choice.getAttribute("value")}) },
-      
-      success: function(response) {
-          $("body").append($("<div class ='quiz_score'>QUIZ SCORE:" + response.value + "% </div>"))
-          $(".quiz").remove(); 
-          $(".submit").remove();
-          $(".start_quiz").remove();
-      }
-    });
-})
+  $("#DateCountdown").draggable()
 
-</script>
+  $(".submit").on("click", function(){
+
+     $.ajax({
+        url: "/scores",
+        type: "POST",
+        data: {quiz_id: <%= @quiz.id %>, answer: _.map($("input:checked"), function(choice){return choice.getAttribute("value")}) },
+        
+        success: function(response) {
+            $("body").append($("<div class ='quiz_score'>QUIZ SCORE:" + response.value + "% </div>"))
+            $(".quiz").remove(); 
+            $(".submit").remove();
+            $(".start_quiz").remove();
+        }
+      });
+  })
+
+  </script>
+
 
 
 

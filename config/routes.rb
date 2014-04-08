@@ -3,9 +3,7 @@ Quizery::Application.routes.draw do
 
   resources :users
 
-  resources :quizzes do
-    resources :questions
-  end
+  resources :quizzes
 
   resources :scores
 

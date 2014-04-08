@@ -29,5 +29,6 @@ $(document).ready(function(){
         }
       }
     });
+    $("#DateCountdown").TimeCircles({count_past_zero: false}); 
   });
 });
