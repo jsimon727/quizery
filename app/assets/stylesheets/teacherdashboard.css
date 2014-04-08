@@ -24,7 +24,6 @@ TEACHER DASHBOARD
 
 .newQuiz{
   margin: 40px;
-  margin-top: 50px;
   line-height: 18pt;
   width: 100%;
 }
@@ -45,8 +44,19 @@ TEACHER DASHBOARD
 .createQuiz{
   padding-top: 40px;
   padding-left: 40px;
+  width: 100%;
+}
+
+.instructions{
+  display: none;
+}
+
+.instructionsButton{
+  width: 200px;
 }
 
 
+.newQuizForm input{
+  width: 150px;
 
-
+}

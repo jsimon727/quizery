@@ -3,7 +3,7 @@ body.quizindex{
   padding: 0px;
 }
 
-.allQuizzesList button {
+.allQuizzesList button, .new_quiz input[type='submit'], .instructionsButton {
   -moz-box-shadow:inset 0px 1px 0px 0px #c1ed9c;
   -webkit-box-shadow:inset 0px 1px 0px 0px #c1ed9c;
   box-shadow:inset 0px 1px 0px 0px #c1ed9c;
@@ -39,14 +39,14 @@ body.quizindex{
   text-shadow:1px 1px 0px #689324;
   cursor: pointer;
 }
-.allQuizzesList button:hover {
+.allQuizzesList button:hover, .new_quiz input[type='submit']:hover, .instructionsButton:hover  {
   background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #8cb82b), color-stop(1, #9dce2c) );
   background:-moz-linear-gradient( center top, #8cb82b 5%, #9dce2c 100% );
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#8cb82b', endColorstr='#9dce2c');
   background-color:#8cb82b;
   cursor: pointer;
 }
-.allQuizzesList button:active {
+.allQuizzesList button:active, .new_quiz input[type='submit']:active, .instructionsButton:active  {
   position:relative;
   top:1px;
   cursor: pointer;

@@ -1,22 +1,25 @@
-<div class="createQuiz">
-  <h1>QUIZERY CREATION ZONE</h1> 
+<h1>QUIZERY CREATION ZONE</h1> 
   <hr>
-
-  <%= link_to("All Quizzes", quizzes_path) %>
-  <ol>
+<div class="createQuiz">
+  <button class="instructionsButton">INSTRUCTIONS</button>
+  <ol class="instructions">
     <li>Input a unique quiz name</li>
-    <li>Select a Category</li>
+    <li>Select a category</li>
     <li>Input the time limit for the quiz in minutes</li>
     <li>Select the quiz start date</li>
     <li>Add multiple questions & answers</li>
     <li>Check the box of the correct answer</li>
+    <li>SAVE QUIZ!</li>
   </ol>
-  
-   <%= image_tag('quizcreation.png')%>
-   <%= image_tag('quizcheck.png')%>
-
-
-  <h2 class ="createNewQuiz">Create a New Quiz</h2>
 </div>
 
+<h2 class ="createNewQuiz">NEW QUIZ</h2>
+
 <%= render 'form' %>
+
+
+<script>
+  $(".instructionsButton").on("click", function(){
+    $(".instructions").toggle();
+  })
+</script>
