@@ -16,6 +16,7 @@
 //= require d3
 //= require jquery.timepicker.js
 //= require TimeCircles.js
+//= require jquery.flexslider
 //= require turbolinks
 //= require underscore
 //= require backbone

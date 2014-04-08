@@ -1,95 +1,24 @@
-<body>
-STUDENT DASHBOARD
-
-
 <br>
 <h1>MY RESULTS</h1>
+<hr>
 
-<div class="chart">
   <% @user.scores.each do |score| %>
-  <% @dataset << score.value %>
-    <div><%= score.value %></div>
+    <% @dataset << score.value %>
+    <div class = "quiznames">
+      <li><strong>Quiz Name:</strong> <%= score.quiz_name %>
+        <li><strong>Score:</strong> <%= score.value %>%</li>
+      </li>
+    </div>
   <% end %> 
+ 
+<h2>Quiz Progress</h2>
+<div class="graph">
 </div>
-</body>
-
 <script>
-var h = 400,
-    w = 800;
 var dataset = <%= @dataset %>
-var chart = d3.select('body')
-              .append('svg') // parent svg element will contain the chart
-              .attr('width', w)
-              .attr('height', h);
 
-var barwidth = w / dataset.length;
+for(var i = 0; i < dataset.length; i++){
+  $(".graph").append($("<div style= 'height:"+ dataset[i] * 2 + "px;' class='bar'>" + dataset[i] + "%</div>"))
+  }
 
-// create bars
-chart.selectAll('rect')  // returns empty selection
-     .data(dataset)      // parses & counts data
-     .enter()            // binds data to placeholders
-     .append('rect')     // creates a rect svg element for every datum
-     .attr('x',function(d,i){   // left-to-right position of left edge of each
-         return i * barwidth;   // bar
-      })
-     .attr('y',function(d){
-         return h - d.value;  // position of the top of each bar
-      })
-     .attr('width', barwidth)
-     .attr('height',function(d){
-         return d.value;
-      })
-     .attr('fill','red');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // d3.select("body").selectAll("div")
-  //   .data(dataset)
-  //   .enter()
-  //   .append("div")
-  //   .attr("class", "bar")
-  //   .style("height", function(d) {
-  //       var barHeight = d * 5;
-  //       return barHeight + "px";
-  //   });
-  // var w = 800;
-  // var h = 400;
-  // var barPadding = 1;
-
-  // var svg = d3.select("body")
-  //           .append("svg")
-  //           .attr("width", w / dataset.length - barPadding)
-  //           .attr("height", h);
-
-  //   svg.selectAll("rect")
-  //        .data(dataset)
-  //        .enter()
-  //        .append("rect")
-  //         .attr("x", function(d, i) {
-  //         return i * (w / dataset.length);
-  //         })
-  //         .attr("y", function(d) {
-  //         return h - d;  //Height minus data value
-  //         })
-  //        .attr("width", w / dataset.length - barPadding)
-  //        .attr("height", function(d) {
-  //         return d * 4;  //Just the data value
-  //         })
-  //         .attr("fill", function(d) {
-  //         return "rgb(0, 0, " + (d * 10) + ")";
-  //         })
-
-  </script>
+</script>

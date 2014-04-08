@@ -12,6 +12,8 @@ gem 'sass-rails', '~> 4.0.0'
 # D3
 gem "d3-rails"
 
+gem 'flexslider'
+
 # Backbone
 gem "rails-backbone"
 gem 'backbone-relational-rails', '~> 0.8.8'

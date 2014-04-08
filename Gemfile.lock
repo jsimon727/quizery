@@ -63,6 +63,8 @@ GEM
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
     ffaker (1.2.0)
+    flexslider (2.2.0)
+      sass-rails (>= 3.1.0)
     hike (1.2.3)
     i18n (0.6.9)
     jasmine (2.0.0)
@@ -196,6 +198,7 @@ DEPENDENCIES
   d3-rails
   factory_girl_rails
   ffaker (~> 1.2.0)
+  flexslider
   jasmine
   jbuilder (~> 1.2)
   jquery-rails

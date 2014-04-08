@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   def show
     @dataset = []
+    @quiznames = []
   end
 
   def create
