@@ -21,6 +21,8 @@ gem 'backbone-relational-rails', '~> 0.8.8'
 # Underscore
 gem 'underscore-rails'
 
+gem 'rails_12factor', group: :production
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 

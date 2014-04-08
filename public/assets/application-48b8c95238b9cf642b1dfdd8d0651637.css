@@ -1,0 +1,672 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ */
+
+
+@import url(http://fonts.googleapis.com/css?family=Dosis|ABeeZee|Gudea);
+
+body{
+  font-family: Gudea;
+  font-size: 12pt;
+  padding: 0px;
+  margin: 0px;
+}
+
+.quiz{
+  display: none;
+}
+
+#timerClock{
+  width: 20%;
+  float: right;
+  margin-right: 40%;
+}
+/**
+ *	This element is created inside your target element
+ *	It is used so that your own element will not need to be altered
+ **/
+
+.time_circles {
+    position: relative;
+    width: 20%;
+    height: 20%;
+}
+
+/**
+ *	This is all the elements used to house all text used
+ * in time circles
+ **/
+.time_circles > div {
+    position: absolute;
+    text-align: center;
+}
+
+/**
+ *	Titles (Days, Hours, etc)
+ **/
+.time_circles > div > h4 {
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Century Gothic', Arial;
+}
+
+/**
+ *	Time numbers, ie: 12
+ **/
+.time_circles > div > span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-family: 'Century Gothic', Arial;
+    font-size: 300%;
+    margin-top: 0.4em;
+    font-weight: bold;
+}
+/****************
+DATE PICKER
+/****************/
+
+
+
+.ui-datepicker {
+  width: 225px;
+  height: auto;
+  margin: 5px auto 0;
+  font: 9pt Arial, sans-serif;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+}
+
+.ui-datepicker a {
+  text-decoration: none;
+}
+
+.ui-datepicker table {
+  width: 100%;
+}
+
+.ui-datepicker-header {
+  background: url('') repeat 0 0 #000;
+  color: #e0e0e0;
+  font-weight: bold;
+  -webkit-box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, 2);
+  -moz-box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, .2);
+  box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, .2);
+  text-shadow: 1px -1px 0px #000;
+  filter: dropshadow(color=#000, offx=1, offy=-1);
+  line-height: 30px;
+  border-width: 1px 0 0 0;
+  border-style: solid;
+  border-color: #111;
+}
+
+.ui-datepicker-title {
+  text-align: center;
+}
+
+.ui-datepicker-prev, .ui-datepicker-next {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  cursor: pointer;
+  background-image: url('');
+  background-repeat: no-repeat;
+  line-height: 600%;
+  overflow: hidden;
+}
+
+.ui-datepicker-prev {
+  float: left;
+  background-position: center -30px;
+}
+.ui-datepicker-next {
+  float: right;
+  background-position: center 0px;
+}
+
+.ui-datepicker thead {
+  background-color: #f7f7f7;
+  background-image: -moz-linear-gradient(top,  #f7f7f7 0%, #f1f1f1 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7f7f7), color-stop(100%,#f1f1f1));
+  background-image: -webkit-linear-gradient(top,  #f7f7f7 0%,#f1f1f1 100%);
+  background-image: -o-linear-gradient(top,  #f7f7f7 0%,#f1f1f1 100%);
+  background-image: -ms-linear-gradient(top,  #f7f7f7 0%,#f1f1f1 100%);
+  background-image: linear-gradient(top,  #f7f7f7 0%,#f1f1f1 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#f1f1f1',GradientType=0 );
+  border-bottom: 1px solid #bbb;
+}
+
+.ui-datepicker th {
+  text-transform: uppercase;
+  font-size: 6pt;
+  padding: 5px 0;
+  color: #666666;
+  text-shadow: 1px 0px 0px #fff;
+  filter: dropshadow(color=#fff, offx=1, offy=0);
+}
+
+.ui-datepicker tbody td {
+  padding: 0;
+  border-right: 1px solid #bbb;
+}
+
+.ui-datepicker tbody td:last-child {
+  border-right: 0px;
+}
+
+.ui-datepicker tbody tr {
+  border-bottom: 1px solid #bbb;
+}
+.ui-datepicker tbody tr:last-child {
+  border-bottom: 0px;
+}
+
+.ui-datepicker td span, .ui-datepicker td a {
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  color: #666666;
+  text-shadow: 1px 1px 0px #fff;
+  filter: dropshadow(color=#fff, offx=1, offy=1);
+}
+.ui-datepicker-calendar .ui-state-default {
+  background: #ededed;
+  background: -moz-linear-gradient(top,  #ededed 0%, #dedede 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ededed), color-stop(100%,#dedede));
+  background: -webkit-linear-gradient(top,  #ededed 0%,#dedede 100%);
+  background: -o-linear-gradient(top,  #ededed 0%,#dedede 100%);
+  background: -ms-linear-gradient(top,  #ededed 0%,#dedede 100%);
+  background: linear-gradient(top,  #ededed 0%,#dedede 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#dedede',GradientType=0 );
+  -webkit-box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, .5);
+  -moz-box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, .5);
+  box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, .5);
+}
+.ui-datepicker-unselectable .ui-state-default {
+  background: #f4f4f4;
+  color: #b4b3b3;
+}
+
+.ui-datepicker-calendar .ui-state-hover {
+  background: #f7f7f7;
+}
+
+.ui-datepicker-calendar .ui-state-active {
+  background: #6eafbf;
+  -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+  -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+  box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+  color: #e0e0e0;
+  text-shadow: 0px 1px 0px #4d7a85;
+  filter: dropshadow(color=#4d7a85, offx=0, offy=1);
+  border: 1px solid #55838f;
+  position: relative;
+  margin: -1px;
+}
+
+.ui-datepicker-calendar td:first-child .ui-state-active {
+  width: 25px;
+  margin-left: 0;
+}
+.ui-datepicker-calendar td:last-child .ui-state-active {
+  width: 25px;
+  margin-right: 0;
+}
+
+.ui-datepicker-calendar tr:last-child .ui-state-active {
+  height: 25px;
+  margin-bottom: 0;
+}
+.description{
+  width: 100%;
+  height: 400px;
+  background-color: #2C79E1;
+  font-family: 'Muli', sans-serif;
+  display: block;
+}
+
+.how{
+   background-color: #363636;
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    0px 5px 5px 0px rgba(50, 50, 50, 0.75);
+  box-shadow:         0px 5px 5px 0px rgba(50, 50, 50, 0.75);
+  width: 100%;
+  display: block;
+  height: 40px;
+  padding: 10px 0;
+}
+
+.how h2{
+  text-align: center;
+  padding: 0px;
+  color: #F8F8F8;
+}
+
+.list{
+  width: 90%;
+  margin: 0 auto;
+  color: white;
+  font-size: 12pt;
+}
+
+.step{
+  width: 20%;
+  display: inline-block;
+  margin-top: 70px;
+  padding: 5px;
+  text-align: center;
+  }
+
+.step img{
+  width: 150px;
+}
+
+.step span{
+  display: inline-block;
+  padding-top: 5%;
+}
+
+
+.step:nth-of-type(2) {
+  margin-right: 15%;
+  margin-left: 15%;
+}
+/*************
+NAVIGATION
+*************/
+/*.nav{
+  background-color: #373737;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100px;
+}*/
+
+
+.nav{
+  float: right;
+  padding-right: 20px;
+}
+
+.nav li {
+  list-style-type: none;
+  float: left;
+  padding-right: 10px; 
+}
+
+.nav li a{
+  text-decoration: none;
+  color: black;
+}
+
+.nav li a:hover{
+  color: #8DC63F;
+}
+body.quizindex{
+  margin: 0px;
+  padding: 0px;
+}
+
+.allQuizzesList button, .new_quiz input[type='submit'], .instructionsButton {
+  -moz-box-shadow:inset 0px 1px 0px 0px #c1ed9c;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #c1ed9c;
+  box-shadow:inset 0px 1px 0px 0px #c1ed9c;
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #9dce2c), color-stop(1, #8cb82b) );
+  background:-moz-linear-gradient( center top, #9dce2c 5%, #8cb82b 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#9dce2c', endColorstr='#8cb82b');
+  background-color:#9dce2c;
+  -webkit-border-top-left-radius:6px;
+  -moz-border-radius-topleft:6px;
+  border-top-left-radius:6px;
+  -webkit-border-top-right-radius:6px;
+  -moz-border-radius-topright:6px;
+  border-top-right-radius:6px;
+  -webkit-border-bottom-right-radius:6px;
+  -moz-border-radius-bottomright:6px;
+  border-bottom-right-radius:6px;
+  -webkit-border-bottom-left-radius:6px;
+  -moz-border-radius-bottomleft:6px;
+  border-bottom-left-radius:6px;
+  text-indent:0;
+  border:1px solid #83c41a;
+  display:inline-block;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+  font-weight:bold;
+  font-style:normal;
+  height:50px;
+  line-height:50px;
+  width:120px;
+  text-decoration:none;
+  text-align:center;
+  text-shadow:1px 1px 0px #689324;
+  cursor: pointer;
+}
+.allQuizzesList button:hover, .new_quiz input[type='submit']:hover, .instructionsButton:hover  {
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #8cb82b), color-stop(1, #9dce2c) );
+  background:-moz-linear-gradient( center top, #8cb82b 5%, #9dce2c 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#8cb82b', endColorstr='#9dce2c');
+  background-color:#8cb82b;
+  cursor: pointer;
+}
+.allQuizzesList button:active, .new_quiz input[type='submit']:active, .instructionsButton:active  {
+  position:relative;
+  top:1px;
+  cursor: pointer;
+}
+
+.allQuizzesList li {
+  float: left;
+  list-style-type: none;
+  padding: 10px;
+}
+
+.clearSpace{
+  width: 100%;
+  display: block;
+  background: white;
+  height: 200px; 
+}
+
+.categories{
+  width: 100%;
+  float: left;
+  margin: 0 auto;
+}
+
+.categories img{
+  width: 15%;
+  float: left;
+  padding-right: 5%;
+  padding-left: 5%
+}
+
+h2 {
+  padding: 10px 0 0 30px; 
+}
+
+.userNav a{
+  text-decoration: none;
+  color: black;
+  padding: 10px 0 0 30px; 
+}
+
+.userNav a:hover{
+  color: #8cb82b;
+}
+
+
+.joinForm{
+  display: none;
+  margin-top: 63px;
+  position: absolute;
+  left: 200%;
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  font-size: 12pt;
+  width: 100%;
+  background-color: #363636;
+}
+
+.joinForm input{
+  line-height: 12pt;
+  margin-top: 5px;
+  border-radius: 4px;
+  display: block; 
+  width: 160px;
+}
+
+.joinDiv{
+  width: 240px;
+  float: left;
+  position: relative;
+}
+
+.loginDiv{
+  width: 240px;
+  float: left;
+  position: relative;
+}
+
+.indexNav{
+  float: right;
+  width: 60%;
+}
+
+.joinbutton, .login, .joinForm input[type= 'submit'], .loginForm input[type='submit'], .start_quiz {
+  -moz-box-shadow:inset 0px 1px 0px 0px #97c4fe;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #97c4fe;
+  box-shadow:inset 0px 1px 0px 0px #97c4fe;
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #3d94f6), color-stop(1, #1e62d0) );
+  background:-moz-linear-gradient( center top, #3d94f6 5%, #1e62d0 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#3d94f6', endColorstr='#1e62d0');
+  background-color:#3d94f6;
+  -webkit-border-top-left-radius:0px;
+  -moz-border-radius-topleft:0px;
+  border-top-left-radius:0px;
+  -webkit-border-top-right-radius:0px;
+  -moz-border-radius-topright:0px;
+  border-top-right-radius:0px;
+  -webkit-border-bottom-right-radius:0px;
+  -moz-border-radius-bottomright:0px;
+  border-bottom-right-radius:0px;
+  -webkit-border-bottom-left-radius:0px;
+  -moz-border-radius-bottomleft:0px;
+  border-bottom-left-radius:0px;
+  text-indent:0;
+  border:1px solid #337fed;
+  display:inline-block;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+  font-weight:bold;
+  font-style:normal;
+  height:41px;
+  line-height:41px;
+  width:300px;
+  text-decoration:none;
+  text-align:center;
+  text-shadow:1px 1px 0px #1570cd;
+}
+
+.joinbutton:hover, .login:hover, .joinForm input[type= 'submit']:hover, .start_quiz:hover {
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #1e62d0), color-stop(1, #3d94f6) );
+  background:-moz-linear-gradient( center top, #1e62d0 5%, #3d94f6 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1e62d0', endColorstr='#3d94f6');
+  background-color:#1e62d0;
+}
+
+.joinForm input[type= 'submit'], .loginForm input[type= 'submit']{
+  margin-top: 10px;
+  width: 100px;
+  cursor: pointer;
+}
+
+.joinbutton {
+  float: right;
+  margin-top: 20px;
+  position: absolute;
+  left: 200%;
+  cursor: pointer;
+}
+
+.joinbutton img{
+  width: 30px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: white;
+}
+
+.login {
+  float: right;
+  margin-top: 20px;
+  position: absolute;
+  left: 50%;
+  cursor: pointer;
+}
+
+.login img{
+  width: 30px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: white;
+}
+
+.loginForm{
+  display: none;
+  float: right;
+  margin-top: 63px;
+  position: absolute;
+  left: 50%;
+  color: white;
+  padding: 30px;
+  border-radius: 10px;
+  font-size: 12pt;
+  width: 100%;
+  background-color: #363636;
+}
+
+.login input:nth-of-type(3){
+  width: 50px;
+}
+body.startquiz{
+  margin-top: 50px 100px;
+  padding: 40px;
+}
+
+.quiz{
+  margin-top: 30px;
+  font-size: 14pt;
+  line-height: 16pt;
+}
+
+.quiz ol{
+  list-style-type: none;
+}
+
+#timerclock{
+  display: block;
+}
+.graph {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #363636;
+    -webkit-box-shadow: 0px 5px 5px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    0px 5px 5px 0px rgba(50, 50, 50, 0.75);
+    box-shadow:         0px 5px 5px 0px rgba(50, 50, 50, 0.75);
+    width: 100%;
+}
+
+h1{
+    margin-left: 30px;
+}
+
+.graph h2{
+    background-color: #8CB93F;
+    width: 100%;
+    height: 50px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.bar {
+    width: 50px;
+    margin: 1px;
+    display: inline-block;
+    position: relative;
+    background-color: #2C79E1;
+    vertical-align: baseline;
+    vertical-align: text-bottom;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+.quiznames li{
+    list-style-type: none;
+    margin-left: 30px;
+}
+/****************
+TEACHER DASHBOARD
+****************/
+
+
+.step1, .step2, .step3{
+  margin-top: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  width: 80%;
+  display: none;
+}
+
+.loginForm{
+  display: none;
+}
+
+.quizForm, .newQuizForm{
+  display: none;
+  border: 1px solid black;
+  padding: 10px;
+  width: 50%;
+}
+
+.newQuiz{
+  margin: 40px;
+  line-height: 18pt;
+  width: 100%;
+}
+
+.createQuiz img{
+  width: 10%;
+}
+
+.createQuiz a {
+  text-decoration: none;
+  color: black;
+}
+
+.createQuiz a:hover{
+  color: #86ae47;
+}
+
+.createQuiz{
+  padding-top: 40px;
+  padding-left: 40px;
+  width: 100%;
+}
+
+.instructions{
+  display: none;
+}
+
+.instructionsButton{
+  width: 200px;
+}
+
+
+.newQuizForm input{
+  width: 150px;
+
+}
