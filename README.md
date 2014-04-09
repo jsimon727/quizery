@@ -1,3 +1,6 @@
+![Alt text](http://quizery.herokuapp.com/assets/quizerylogo-56698719557360880e28fa10ae1c3973.png)
+
+
 ### GA WDI NYC Jan 14, Project 3
 
 ### Overview
@@ -25,6 +28,8 @@
 * A user can view all quizzes available.
 * A user can complete a quiz when the start date begins.
 * A user can track their quiz scores and progress.
+* A user can see their score when they submit the quiz.
+* A teacher can read instructions on how to create a quiz.
 
 ### ERD
 
