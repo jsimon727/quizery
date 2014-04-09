@@ -20,7 +20,7 @@ class ScoresController < ApplicationController
     score = 0
     @answers = []
     params["answer"].each do |answer|
-     @answers << Answer.find((answer.to_i))
+      @answers << Answer.find((answer.to_i))
     end
     @answers.each do |answer|
       if answer.correct == true

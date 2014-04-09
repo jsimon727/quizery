@@ -11,9 +11,6 @@
 
   <button class="start_quiz">Start Quiz</button>
 
-  <div class="blue">
-  </div>
-
   <div id="timerClock">
     <div id="DateCountdown" data-timer="<%= @quiz.time_limit * 60 %>" class="ui-widget-content" style="width: 100%;">
     </div>
@@ -36,23 +33,22 @@
         <% end %>
     </ol>
 
-    <div><%= submit_tag("Submit", :class => "submit") %></div>
+  <div><%= submit_tag("Submit", :class => "submit") %></div>
 
   </div>
-
-  <%= @score %>
 
   <% else %>
     <h4>Sorry this quiz is not available yet. It will be available on <%= @quiz.start_date %></h4>
   <% end %>
 
 </body>
-  <script>
+
+
+<script>
 
   $("#DateCountdown").draggable()
 
   $(".submit").on("click", function(){
-
      $.ajax({
         url: "/scores",
         type: "POST",
@@ -67,7 +63,7 @@
       });
   })
 
-  </script>
+</script>
 
 
 

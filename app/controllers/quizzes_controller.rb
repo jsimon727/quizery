@@ -1,4 +1,6 @@
 class QuizzesController < ApplicationController
+  before_action(:load_quiz, { only: [:show, :destroy] })
+
   def index
     @quizzes = Quiz.search(params[:search])
     @all_quizzes = Quiz.all
@@ -17,7 +19,6 @@ class QuizzesController < ApplicationController
   end
 
   def show
-    @quiz = Quiz.find(params[:id])
     @questions = @quiz.questions
   end
 
@@ -31,7 +32,16 @@ class QuizzesController < ApplicationController
     end
   end
 
+  def destroy
+    @quiz.destroy
+    redirect_to ('/')
+  end
+
   private
+
+  def load_quiz
+    return @quiz = Quiz.find(params[:id])
+  end
 
   def quiz_params
     params.require(:quiz).permit(:category, :name, :time_limit, :start_date, questions_attributes: [:query, :number, :time_limit, answers_attributes: [:name, :number, :correct]])
