@@ -34,9 +34,8 @@
 
 ##[Pivotal Tracker](https://www.pivotaltracker.com/s/projects/1051990)
 
-##[ERD](https://farm4.staticflickr.com/3724/13729027085_96735c2405_b.jpg)
 
-##[Quizery ](https://quizery.herokuapp.com)
+##[Quizery on Heroku](https://quizery.herokuapp.com)
 
 
 ---
