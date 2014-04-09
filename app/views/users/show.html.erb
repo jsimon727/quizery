@@ -1,4 +1,3 @@
-<br>
 <h1>MY RESULTS</h1>
 <hr>
 
@@ -6,19 +5,21 @@
     <% @dataset << score.value %>
     <div class = "quiznames">
       <li><strong>Quiz Name:</strong> <%= score.quiz_name %>
-        <li><strong>Score:</strong> <%= score.value %>%</li>
+        <li><strong>Score:</strong> <%= score.value %>%
+        </li>
       </li>
     </div>
   <% end %> 
  
 <h2>Quiz Progress</h2>
+
 <div class="graph">
 </div>
+
 <script>
-var dataset = <%= @dataset %>
+  var dataset = <%= @dataset %>
 
-for(var i = 0; i < dataset.length; i++){
-  $(".graph").append($("<div style= 'height:"+ dataset[i] * 2 + "px;' class='bar'>" + dataset[i] + "%</div>"))
+  for(var i = 0; i < dataset.length; i++){
+    $(".graph").append($("<div style= 'height:"+ dataset[i] * 2 + "px;' class='bar'>" + dataset[i] + "%</div>"))
   }
-
 </script>

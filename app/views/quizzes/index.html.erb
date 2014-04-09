@@ -1,29 +1,28 @@
 <body class="quizindex">
 
-
-
   <% unless current_user %>
-  <container class="indexNav">
-    <div class="loginDiv">
-      <button class="login">LOG IN <%= image_tag('arrowdown.png')%></button>
-      <div class="loginForm">
-        <%= form_tag "/login" do %>
-          <%= label_tag :email %>:
-          <%= email_field_tag :email %></br>
-          <%= label_tag :password %>:
-          <%= password_field_tag :password %></br>
-          <%= submit_tag "Log in!" %>
-        <% end %>
+    <container class="indexNav">
+      <div class="loginDiv">
+        <button class="login">LOG IN <%= image_tag('arrowdown.png')%>
+        </button>
+        <div class="loginForm">
+          <%= form_tag "/login" do %>
+            <%= label_tag :email %>:
+            <%= email_field_tag :email %></br>
+            <%= label_tag :password %>:
+            <%= password_field_tag :password %></br>
+            <%= submit_tag "Log in!" %>
+          <% end %>
+        </div>
       </div>
-    </div>
-    <div class="joinDiv">
-      <button class="joinbutton">JOIN <%= image_tag('arrowdown.png')%></button>
-      <form class="joinForm" method="POST" action="/users">
-      </form>
-    </div>
-  </container>
-    <% end %>
-
+      <div class="joinDiv">
+        <button class="joinbutton">JOIN <%= image_tag('arrowdown.png')%>
+        </button>
+        <form class="joinForm" method="POST" action="/users">
+        </form>
+      </div>
+    </container>
+  <% end %>
 
   <%= image_tag('quizerylogo.png') %>
 
@@ -42,15 +41,12 @@
     <% end %>
   </div>
 
-
   <%= form_tag quizzes_path, :method => 'get' do %>
     <p>
       <%= text_field_tag :search, params[:search] %>
       <%= submit_tag "Search", :name => nil %>
     </p>
   <% end %>
-
-
 
     <h2> All Quizzes </h2>
     <div class="allQuizzesList">
@@ -62,10 +58,11 @@
     <div class="clearSpace">
     </div>
 
-    <div class = "description">
+  <div class = "description">
     <div class="how">
       <h2> HOW DOES IT WORK? </h2>
     </div>
+
     <ul class="list">
       <li class="step">
         <%= image_tag("quizcreation.png") %>
@@ -74,11 +71,10 @@
       <li class="step">
         <%= image_tag("score.png") %>
         <span>Students can complete quizzes and receive their scores.</span>
-  
       </li>
       <li class="step">
-         <%= image_tag("results.png") %>
-         <span>Teachers and Students can view thier results!</span>
+        <%= image_tag("results.png") %>
+        <span>Teachers and Students can view thier results!</span>
       </li>
     </ul>
   </div>
