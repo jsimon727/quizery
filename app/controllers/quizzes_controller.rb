@@ -1,7 +1,8 @@
 class QuizzesController < ApplicationController
   def index
-    @quizzes = Quiz.all
-    @quizzes.group_by(&:category)
+    @quizzes = Quiz.search(params[:search])
+    @all_quizzes = Quiz.all
+    @all_quizzes.group_by(&:category)
     if current_user
       @user = User.find(current_user.id)
     end

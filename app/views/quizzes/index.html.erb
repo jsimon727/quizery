@@ -18,7 +18,7 @@
     </div>
     <div class="joinDiv">
       <button class="joinbutton">JOIN <%= image_tag('arrowdown.png')%></button>
-      <form class="joinForm">
+      <form class="joinForm" method="POST" action="/users">
       </form>
     </div>
   </container>
@@ -41,6 +41,15 @@
       <%= link_to("My Dashboard", user_path(@user)) %> 
     <% end %>
   </div>
+
+
+  <%= form_tag quizzes_path, :method => 'get' do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", :name => nil %>
+    </p>
+  <% end %>
+
 
 
     <h2> All Quizzes </h2>

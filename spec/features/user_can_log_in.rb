@@ -1,13 +1,14 @@
 require 'spec_helper'
-Capybara.javascript_driver = :webkit
 
-describe "a student can join Quizery", :js => true do
+describe "a student can join Quizery" do
   let(:student){ FactoryGirl.create(:user, type: "Student") }
   let(:student1){ FactoryGirl.create(:user) }
 
-  it "creates a new student", :driver => :webkit do
+  it "creates a new student" do
     visit '/'
-    click_button "Join Quizery"
+    within ".joinbutton" do
+      click_button "JOIN "
+    end
 
     fill_in :email, with: student.email
     fill_in :first_name, with: student.first_name
@@ -46,8 +47,9 @@ describe "a student can join Quizery", :js => true do
 
   def login(user)
     visit '/'
-    fill_in :email, with: student.email
-    fill_in :password, with: student.password
+    click_button "LOG IN"
+    fill_in :email, with: user.email
+    fill_in :password, with: user.password
     click_button "Log in"
   end
 

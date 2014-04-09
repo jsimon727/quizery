@@ -1,36 +1,36 @@
-Quizery.Views.UserForm = Backbone.View.extend({
-  el: ".joinForm",
+// Quizery.Views.UserForm = Backbone.View.extend({
+//   el: ".joinForm",
 
-  events: {
-    "submit": "createUser"
-  },
+//   events: {
+//     "submit": "createUser"
+//   },
 
-  createUser: function(e) {
-    e.preventDefault();
-    var type = this.el.elements["type"].value;
-    var email = this.el.elements["email"].value;
-    var first_name = this.el.elements["first_name"].value;
-    var last_name = this.el.elements["last_name"].value;
-    var password = this.el.elements["password"].value;
-    var password_confirmation = this.el.elements["password_confirmation"].value;
+//   createUser: function(e) {
+//     e.preventDefault();
+//     var type = this.el.elements["type"].value;
+//     var email = this.el.elements["email"].value;
+//     var first_name = this.el.elements["first_name"].value;
+//     var last_name = this.el.elements["last_name"].value;
+//     var password = this.el.elements["password"].value;
+//     var password_confirmation = this.el.elements["password_confirmation"].value;
  
-    this.collection.create({
-      type: type,
-      email: email, 
-      first_name: first_name, 
-      last_name: last_name,
-      password: password,
-      password_confirmation: password_confirmation
-    });
+//     this.collection.create({
+//       type: type,
+//       email: email, 
+//       first_name: first_name, 
+//       last_name: last_name,
+//       password: password,
+//       password_confirmation: password_confirmation
+//     });
 
-    this.el.reset();
-    this.el.remove();
-  }
-});
+//     this.el.reset();
+//     this.el.remove();
+//   }
+// });
 
 $(document).ready(function(){
-  var users = new Quizery.Collections.Users();
-  var joinFormView = new Quizery.Views.UserForm({collection: users});
+  // var users = new Quizery.Collections.Users();
+  // var joinFormView = new Quizery.Views.UserForm({collection: users});
   $(".joinbutton").on("click", function(){
     $(".joinForm").toggle();
     $(".joinForm").empty();
@@ -40,7 +40,7 @@ $(document).ready(function(){
     $(".joinForm").append("Password Confirmation: <input type='password', name='password_confirmation'></input><br>");
     $(".joinForm").append("First Name: <input type='text', name='first_name'></input><br>");
     $(".joinForm").append("Last Name: <input type='text', name='last_name'></input><br>");
-    $(".joinForm").append("<input type='submit', value='Save'></input>");
+    $(".joinForm").append("<input type='submit', value='Save'></input>"); 
   });
 })
 
