@@ -1,5 +1,6 @@
 ![Alt text](http://quizery.herokuapp.com/assets/quizerylogo-56698719557360880e28fa10ae1c3973.png)
 
+![Alt text](https://farm4.staticflickr.com/3724/13729027085_96735c2405_b.jpg)
 
 ### GA WDI NYC Jan 14, Project 3
 
@@ -31,9 +32,11 @@
 * A user can see their score when they submit the quiz.
 * A teacher can read instructions on how to create a quiz.
 
-### ERD
+##[Pivotal Tracker](https://www.pivotaltracker.com/s/projects/1051990)
 
-# A link to Quizery can be found here: (https://quizery.herokuapp.com)
+##[ERD](https://farm4.staticflickr.com/3724/13729027085_96735c2405_b.jpg)
+
+##[Quizery ](https://quizery.herokuapp.com)
 
 
 ---
