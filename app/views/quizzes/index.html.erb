@@ -18,7 +18,15 @@
       <div class="joinDiv">
         <button class="joinbutton">JOIN <%= image_tag('arrowdown.png')%>
         </button>
-        <form class="joinForm" method="POST" action="/users">
+        <form class="joinForm" name='user' method="POST" action="/users">
+          <select name='type'><option value='Student'>Student</option><option value='Teacher'>Teacher</option></select><br>
+          Email:                 <input type='email', name='email'></input><br>
+          Password:              <input type='password', name='password'></input><br>
+          Password Confirmation: <input type='password', name='password_confirmation'></input><br>
+          First Name:            <input type='text', name='first_name'></input><br>
+          Last Name:             <input type='text', name='last_name'></input><br>
+                                 <input type='submit', value='Save'></input> 
+
         </form>
       </div>
     </container>
@@ -88,6 +96,10 @@
   $('.login').click(function(){
     $('.loginForm').toggle()
   })
+
+  $(".joinbutton").on("click", function(){
+    $(".joinForm").toggle();
+  });
 </script>
 
 

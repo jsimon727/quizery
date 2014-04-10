@@ -6,8 +6,8 @@ describe "a teacher can create a quiz", :js => true do
 
   it "creates a new quiz", :driver => :webkit do
     visit '/'
-    join(:teacher)
     login(:teacher)
+    click_link ""
   end
 end    
 
